@@ -1,10 +1,10 @@
 {
-  "name": "jsdoc-generator",
-  "displayName": "JSDoc Generator",
-  "description": "Automatic JSDoc generator for TypeScript.",
-  "publisher": "crystal-spider",
+  "name": "@rw3iss/jsdoc-generator",
+  "displayName": "JSDoc Generator (@rw3iss)",
+  "description": "Automatic JSDoc generator for TypeScript. Forked and modified from Nyphet/jsdoc-generator",
+  "publisher": "rw3iss",
   "icon": "jsdoc-generator.png",
-  "version": "1.1.1",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.57.0"
   },
@@ -117,5 +117,9 @@
     "mocha": "^8.4.0",
     "typescript": "^4.3.5",
     "vscode-test": "^1.5.2"
+  },
+  "__metadata": {
+    "publisherDisplayName": "rw3iss",
+    "isPreReleaseVersion": false
   }
 }
