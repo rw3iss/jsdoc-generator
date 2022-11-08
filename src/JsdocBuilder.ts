@@ -67,7 +67,7 @@ export class JsdocBuilder {
    */
   public getClassLikeDeclarationJsdoc(node: ClassDeclaration | InterfaceDeclaration): SnippetString {
     this.buildJsdocHeader();
-    this.buildJsdocModifiers(node.modifiers);
+    this.buildJsdocModifiers((node as any).modifiers);
     if (node.name) {
       this.buildJsdocLine(
         node.kind === SyntaxKind.InterfaceDeclaration ? 'interface' : 'class',
@@ -100,7 +100,7 @@ export class JsdocBuilder {
       this.getClassLikeDeclarationJsdoc(<ClassDeclaration>classAssigned);
     } else {
       this.buildJsdocHeader();
-      this.buildJsdocModifiers(node.modifiers);
+      this.buildJsdocModifiers((node as any).modifiers);
       this.buildJsdocLine('type', this.retrieveType(node));
       this.buildJsdocEnd();
     }
@@ -124,7 +124,7 @@ export class JsdocBuilder {
       this.buildDescription(pairedDescription ? pairedDescription : '');
     } else {
       this.buildJsdocHeader();
-      this.buildJsdocModifiers(node.modifiers);
+      this.buildJsdocModifiers((node as any).modifiers);
       if (node.kind === SyntaxKind.GetAccessor && !pairedAccessor) {
         this.buildJsdocLine('readonly');
       }
@@ -142,7 +142,7 @@ export class JsdocBuilder {
    */
   public getEnumDeclarationJsdoc(node: EnumDeclaration): SnippetString {
     this.buildJsdocHeader();
-    this.buildJsdocModifiers(node.modifiers);
+    this.buildJsdocModifiers((node as any).modifiers);
     this.buildJsdocLine('enum', 'number');
     this.buildJsdocEnd();
     return this.jsdoc;
@@ -156,7 +156,7 @@ export class JsdocBuilder {
    */
   public getMethodDeclarationJsdoc(node: MethodDeclaration): SnippetString {
     this.buildJsdocHeader();
-    this.buildJsdocModifiers(node.modifiers);
+    this.buildJsdocModifiers((node as any).modifiers);
     this.buildTypeParameters(node.typeParameters);
     this.buildJsdocParameters(node.parameters);
     this.buildJsdocReturn(node);
@@ -181,7 +181,7 @@ export class JsdocBuilder {
     this.buildAuthor();
     this.buildJsdocLine();
     this.buildJsdocLine('constructor');
-    this.buildJsdocModifiers(node.modifiers);
+    this.buildJsdocModifiers((node as any).modifiers);
     this.buildJsdocParameters(node.parameters);
     this.buildJsdocEnd();
     return this.jsdoc;
@@ -195,7 +195,7 @@ export class JsdocBuilder {
    */
   public getTypeAliasJsdoc(node: TypeAliasDeclaration): SnippetString {
     this.buildJsdocHeader();
-    this.buildJsdocModifiers(node.modifiers);
+    this.buildJsdocModifiers((node as any).modifiers);
     this.buildJsdocLine('typedef', node.name.getText());
     this.buildTypeParameters(node.typeParameters);
     this.buildJsdocEnd();
