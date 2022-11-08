@@ -6,7 +6,7 @@
   "icon": "jsdoc-generator.png",
   "version": "1.0.0",
   "engines": {
-    "vscode": "^1.57.0"
+    "vscode": "^1.60.0"
   },
   "categories": [
     "Snippets",
@@ -86,9 +86,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Nyphet/jsdoc-generator.git"
+    "url": "https://github.com/rw3iss/jsdoc-generator.git"
   },
   "scripts": {
+    "build": "npm run compile && npm run vscode:prepublish",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile && npm run eslint:fix",
